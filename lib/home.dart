@@ -1,14 +1,16 @@
 import 'package:flutter/material.dart';
-
+import './feed.dart';
 
 class HomePage extends StatefulWidget {
   @override
   _HomePageState createState() => _HomePageState();
+
+  static const String route = '';
 }
 
 class _HomePageState extends State<HomePage> {
   List isHovering = [false, false, false];
-  List isSelected = [true, false, false];
+  List isSelected = [false, false, false];
 
   @override
   Widget build(BuildContext context) {
@@ -29,7 +31,9 @@ class _HomePageState extends State<HomePage> {
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [
                       InkWell(
-                        onTap: () {},
+                        onTap: () {
+                          Navigator.of(context).pushNamed(FeedPage.route);
+                        },
                         onHover: (value) {
                           setState(() => isHovering[0] = value);
                         },
