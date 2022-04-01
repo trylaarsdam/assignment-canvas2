@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import './feed.dart';
-
+import './announcements.dart';
+import './assignments.dart';
 class HomePage extends StatefulWidget {
   @override
   _HomePageState createState() => _HomePageState();
@@ -66,7 +67,9 @@ class _HomePageState extends State<HomePage> {
                       ),
                       SizedBox(width: screenSize.width / 20),
                       InkWell(
-                        onTap: () {},
+                        onTap: () {
+                          Navigator.of(context).pushNamed(AnnouncementsPage.route);
+                        },
                         onHover: (value) {
                           setState(() => isHovering[1] = value);
                         },
@@ -99,7 +102,9 @@ class _HomePageState extends State<HomePage> {
                       ),
                       SizedBox(width: screenSize.width / 20),
                       InkWell(
-                        onTap: () {},
+                        onTap: () {
+                          Navigator.of(context).pushNamed(AssignmentsPage.route);
+                        },
                         onHover: (value) {
                           setState(() => isHovering[2] = value);
                         },

@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import './home.dart';
 import './feed.dart';
+import './announcements.dart';
+import './assignments.dart';
 
 void main() {
   runApp(AssignmentCanvasApp());
@@ -15,6 +17,8 @@ class AssignmentCanvasApp extends StatelessWidget {
       routes: {
         HomePage.route: (context) => HomePage(),
         FeedPage.route: (context) => FeedPage(),
+        AnnouncementsPage.route: (context) => AnnouncementsPage(),
+        AssignmentsPage.route: (context) => AssignmentsPage(),
       },
       theme: ThemeData(
         visualDensity: VisualDensity.adaptivePlatformDensity,
