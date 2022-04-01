@@ -66,6 +66,8 @@ class _AssignmentCardWidgetState extends State<AssignmentCardWidget> {
       child: Padding(
         padding: const EdgeInsets.all(20.0),
         child: Column(
+          mainAxisAlignment: MainAxisAlignment.start,
+          crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             Row(
               children: [
@@ -101,12 +103,13 @@ class _AssignmentCardWidgetState extends State<AssignmentCardWidget> {
                         ),
                         side: const BorderSide(width: 2.0, color: Colors.green),
                       ),
-                      
                     ),
                   ],
                 )
               ]
-            )
+            ),
+            const Divider(),
+            Text(description)
           ]
         ) 
       )

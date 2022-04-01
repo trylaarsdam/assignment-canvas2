@@ -14,6 +14,7 @@ class _FeedPageState extends State<FeedPage> {
   List isSelected = [true, false, false];
   String sortSelection = "Newest First";
   String classSelection = "All Classes";
+  bool showingCompleted = false;
 
   final ScrollController _scrollController = ScrollController();
 
@@ -37,7 +38,21 @@ class _FeedPageState extends State<FeedPage> {
                 children: [
                   Text("Your Feed", style: TextStyle(fontSize: 30, fontWeight: FontWeight.bold)),
                   Spacer(),
-                  Text("Filter by class: ", style: TextStyle(fontSize: 16.0)),
+                  Text("Show Completed: ", style: TextStyle(fontSize: 16.0)),
+                  Padding(
+                    padding: const EdgeInsets.only(right: 5.0),
+                    child: Switch(
+                      value: showingCompleted,
+                      onChanged: (value) {
+                        setState(() {
+                          showingCompleted = value;
+                        });
+                      },
+                      activeTrackColor: Colors.lightGreenAccent,
+                      activeColor: Colors.green,
+                    ),
+                  ),
+                  Text("Selected Class: ", style: TextStyle(fontSize: 16.0)),
                   Padding(
                     padding: const EdgeInsets.only(right: 20.0),
                     child: DropdownButton<String> (
@@ -63,7 +78,6 @@ class _FeedPageState extends State<FeedPage> {
                       }).toList(),
                     ),
                   ),
-                  
                   Text("Sort by: ", style: TextStyle(fontSize: 16.0)),
                   DropdownButton<String> (
                     value: sortSelection,
