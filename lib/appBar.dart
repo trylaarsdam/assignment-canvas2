@@ -10,8 +10,10 @@ class AppBarSingleton {
 
   static AppBarSingleton get instance => _instance ??= AppBarSingleton._();
 
+  static var widgetSingleton = AppBarWidget();
+
   AppBarWidget widget() {
-    return AppBarWidget();
+    return widgetSingleton;
   }
 }
 
