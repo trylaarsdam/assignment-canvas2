@@ -1,6 +1,6 @@
-import 'package:assignment_canvas2/assignmentCard.dart';
 import 'package:flutter/material.dart';
 import './appBar.dart';
+import 'package:assignment_canvas2/cards/assignmentCard.dart';
 
 class FeedPage extends StatefulWidget {
   @override
