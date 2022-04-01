@@ -97,7 +97,7 @@ class _FeedPageState extends State<FeedPage> {
                 controller: _scrollController,
                 child: Column(
                   children: [
-                    AssignmentCardWidget()
+                    AssignmentCardWidget(title: "Assignment 1", className: "Class 1", dueDate: "dueDate", description: "description", points: "points", status: "status")
                   ],
                 ),
               )
