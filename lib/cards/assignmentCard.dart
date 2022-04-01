@@ -10,10 +10,16 @@ class AssignmentCardWidget extends StatefulWidget {
   final String description;
   final String points;
   final String status;
+  final String classID;
+  final String id;
+  final String authorName;
 
   AssignmentCardWidget({
     required this.title,
     required this.className,
+    required this.classID,
+    required this.authorName,
+    required this.id,
     required this.dueDate,
     required this.description,
     required this.points,
@@ -28,6 +34,9 @@ class AssignmentCardWidget extends StatefulWidget {
     description: description,
     points: points,
     status: status,
+    classID: classID,
+    id: id,
+    authorName: authorName,
   );
 }
 
@@ -38,6 +47,9 @@ class _AssignmentCardWidgetState extends State<AssignmentCardWidget> {
   final String description;
   final String points;
   final String status;
+  final String classID;
+  final String id;
+  final String authorName;
 
   _AssignmentCardWidgetState({
     required this.title,
@@ -46,6 +58,9 @@ class _AssignmentCardWidgetState extends State<AssignmentCardWidget> {
     required this.description,
     required this.points,
     required this.status,
+    required this.classID,
+    required this.authorName,
+    required this.id,
   });
 
   List isHovering = [false, false, false];
@@ -76,10 +91,11 @@ class _AssignmentCardWidgetState extends State<AssignmentCardWidget> {
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
                     Text(title, style: const TextStyle(fontSize: 20, fontWeight: FontWeight.bold)),
-                    Text(className, style: const TextStyle(fontSize: 16.0)),
+                    Text(authorName + " - " + className, style: const TextStyle(fontSize: 16.0)),
                   ]
                 ),
                 const Spacer(),
+                Text("Due: " + dueDate + " ", style: const TextStyle(fontSize: 16.0, fontStyle: FontStyle.italic)),
                 ButtonBar(
                   children: [
                     OutlinedButton(

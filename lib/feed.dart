@@ -14,7 +14,7 @@ class _FeedPageState extends State<FeedPage> {
   List isSelected = [true, false, false];
   String sortSelection = "Newest First";
   String classSelection = "All Classes";
-  bool showingCompleted = false;
+  bool showingCompleted = true;
 
   final ScrollController _scrollController = ScrollController();
 
@@ -111,7 +111,14 @@ class _FeedPageState extends State<FeedPage> {
                 controller: _scrollController,
                 child: Column(
                   children: [
-                    AssignmentCardWidget(title: "Assignment 1", className: "Class 1", dueDate: "dueDate", description: "description", points: "points", status: "status")
+                    Padding(
+                      padding: EdgeInsets.only(bottom: 20.0),
+                      child: AssignmentCardWidget(title: "Assignment 1", className: "Class 1", dueDate: "4/8/22", description: "this assignment is worth 20 points and is due on friday", points: "20", status: "not complete", classID: "1", id: "1", authorName: "Teacher Name"),
+                    ),
+                    Padding(
+                      padding: EdgeInsets.only(bottom: 20.0),
+                      child: AssignmentCardWidget(title: "Assignment 2", className: "Class 1", dueDate: "4/5/22", description: "this is information about an assignment", points: "15", status: "complete", classID: "1", id: "2", authorName: "Teacher Name")
+                    )
                   ],
                 ),
               )
