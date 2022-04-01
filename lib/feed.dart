@@ -105,7 +105,23 @@ class _FeedPageState extends State<FeedPage> {
                       width: screenSize.width,
                       child: Padding(
                         padding: const EdgeInsets.all(20.0),
-                        child: Text("Assignment 1", style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold)),
+                        child: Column(
+                          children: [
+                            Row(
+                              children: [
+                                Column(
+                                  mainAxisAlignment: MainAxisAlignment.start,
+                                  crossAxisAlignment: CrossAxisAlignment.start,
+                                  children: [
+                                    Text("Assignment 1", style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold)),
+                                    Text("Class 1", style: TextStyle(fontSize: 16.0)),
+                                  ]
+                                )
+                              ]
+                            )
+
+                          ]
+                        ) 
                       )
                     )
                   ],
