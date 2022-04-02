@@ -7,7 +7,6 @@ import 'pages/assignments.dart';
 void main() {
   runApp(AssignmentCanvasApp());
 }
-
 class AssignmentCanvasApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
