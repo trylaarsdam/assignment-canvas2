@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import './feed.dart';
-import './announcements.dart';
-import './assignments.dart';
+import 'pages/feed.dart';
+import 'pages/announcements.dart';
+import 'pages/assignments.dart';
 
 class AppBarSingleton {
   static AppBarSingleton? _instance;

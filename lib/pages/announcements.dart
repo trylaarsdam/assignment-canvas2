@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import './appBar.dart';
+import '../appBar.dart';
 
 class AnnouncementsPage extends StatefulWidget {
   @override
@@ -19,7 +19,7 @@ class _AnnouncementsPageState extends State<AnnouncementsPage> {
     return Scaffold(
       appBar: PreferredSize(
         preferredSize: Size(screenSize.width, 1000),
-        child: AppBarSingleton.instance.widget()),
+        child: AppBarWidget()),
       body: Text("announcements"),
     );
   }

@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import './appBar.dart';
+import '../appBar.dart';
 class HomePage extends StatefulWidget {
   @override
   _HomePageState createState() => _HomePageState();
@@ -15,7 +15,7 @@ class _HomePageState extends State<HomePage> {
     return Scaffold(
       appBar: PreferredSize(
         preferredSize: Size(screenSize.width, 1000),
-        child: AppBarSingleton.instance.widget()),
+        child: AppBarWidget()),
       body: Container(),
     );
   }

@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
-import './home.dart';
-import './feed.dart';
-import './announcements.dart';
-import './assignments.dart';
+import 'pages/home.dart';
+import 'pages/feed.dart';
+import 'pages/announcements.dart';
+import 'pages/assignments.dart';
 
 void main() {
   runApp(AssignmentCanvasApp());

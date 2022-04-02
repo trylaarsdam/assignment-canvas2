@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
-import './appBar.dart';
+import '../appBar.dart';
 import 'package:assignment_canvas2/cards/assignmentCard.dart';
+import 'package:assignment_canvas2/cards/announcementCard.dart';
 
 class FeedPage extends StatefulWidget {
   @override
@@ -25,7 +26,7 @@ class _FeedPageState extends State<FeedPage> {
     return Scaffold(
       appBar: PreferredSize(
         preferredSize: Size(screenSize.width, 1000),
-        child: AppBarSingleton.instance.widget(),
+        child: AppBarWidget(),
       ),
       body: 
       Padding(
@@ -104,25 +105,37 @@ class _FeedPageState extends State<FeedPage> {
                 ],
               ),
             ),
-            Padding(
-              padding: const EdgeInsets.only(bottom: 20.0, left: 00.0, right: 00.0),
-              child: Scrollbar(
-                isAlwaysShown: true,
+            Expanded(
+              child: ListView(
                 controller: _scrollController,
-                child: Column(
-                  children: [
-                    Padding(
-                      padding: EdgeInsets.only(bottom: 20.0),
-                      child: AssignmentCardWidget(title: "Assignment 1", className: "Class 1", dueDate: "4/8/22", description: "this assignment is worth 20 points and is due on friday", points: "20", status: "not complete", classID: "1", id: "1", authorName: "Teacher Name"),
-                    ),
-                    Padding(
-                      padding: EdgeInsets.only(bottom: 20.0),
-                      child: AssignmentCardWidget(title: "Assignment 2", className: "Class 1", dueDate: "4/5/22", description: "this is information about an assignment", points: "15", status: "complete", classID: "1", id: "2", authorName: "Teacher Name")
+                physics: const PageScrollPhysics(),
+                children: [
+                  Padding(
+                    padding: const EdgeInsets.only(bottom: 20.0, left: 00.0, right: 00.0),
+                    child: Container(
+                      child: SingleChildScrollView(
+                        child: Column(
+                          children: [
+                            Padding(
+                              padding: EdgeInsets.only(bottom: 20.0),
+                              child: AssignmentCardWidget(title: "Assignment 1", className: "Class 1", dueDate: "4/8/22", description: "this assignment is worth 20 points and is due on friday", points: "20", status: "not complete", classID: "1", id: "1", authorName: "Teacher Name"),
+                            ),
+                            Padding(
+                              padding: EdgeInsets.only(bottom: 20.0),
+                              child: AssignmentCardWidget(title: "Assignment 2", className: "Class 1", dueDate: "4/5/22", description: "this is information about an assignment", points: "15", status: "complete", classID: "1", id: "2", authorName: "Teacher Name")
+                            ),
+                            Padding(
+                              padding: EdgeInsets.only(bottom: 20.0),
+                              child: AnnouncementCardWidget(title: "Announcement 1", className: "Class 2", description: "this is the content of an announcement \nthis is another line", status: "complete", classID: "1", id: "2", authorName: "Teacher Name")
+                            )
+                          ],
+                        )
+                      ),
                     )
-                  ],
-                ),
+                  ),
+                ]
               )
-            ),
+            )
           ],
         ),
       ),

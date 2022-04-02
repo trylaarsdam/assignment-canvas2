@@ -1,38 +1,29 @@
 import 'package:flutter/material.dart';
 
-
-
-
-class AssignmentCardWidget extends StatefulWidget {
+class AnnouncementCardWidget extends StatefulWidget {
   final String title;
   final String className;
-  final String dueDate;
   final String description;
-  final String points;
   final String status;
   final String classID;
   final String id;
   final String authorName;
 
-  AssignmentCardWidget({
+  AnnouncementCardWidget({
     required this.title,
     required this.className,
     required this.classID,
     required this.authorName,
     required this.id,
-    required this.dueDate,
     required this.description,
-    required this.points,
     required this.status,
   });
 
   @override
-  _AssignmentCardWidgetState createState() => _AssignmentCardWidgetState(
+  _AnnouncementCardWidgetState createState() => _AnnouncementCardWidgetState(
     title: title,
     className: className,
-    dueDate: dueDate,
     description: description,
-    points: points,
     status: status,
     classID: classID,
     id: id,
@@ -40,23 +31,19 @@ class AssignmentCardWidget extends StatefulWidget {
   );
 }
 
-class _AssignmentCardWidgetState extends State<AssignmentCardWidget> {
+class _AnnouncementCardWidgetState extends State<AnnouncementCardWidget> {
   final String title;
   final String className;
-  final String dueDate;
   final String description;
-  final String points;
   final String status;
   final String classID;
   final String id;
   final String authorName;
 
-  _AssignmentCardWidgetState({
+  _AnnouncementCardWidgetState({
     required this.title,
     required this.className,
-    required this.dueDate,
     required this.description,
-    required this.points,
     required this.status,
     required this.classID,
     required this.authorName,
@@ -95,7 +82,6 @@ class _AssignmentCardWidgetState extends State<AssignmentCardWidget> {
                   ]
                 ),
                 const Spacer(),
-                Text("Points: " + points + " | Due: " + dueDate + " ", style: const TextStyle(fontSize: 16.0, fontStyle: FontStyle.italic)),
                 ButtonBar(
                   children: [
                     OutlinedButton(
