@@ -3,29 +3,20 @@ import 'pages/feed.dart';
 import 'pages/announcements.dart';
 import 'pages/assignments.dart';
 
-class AppBarSingleton {
-  static AppBarSingleton? _instance;
-
-  AppBarSingleton._();
-
-  static AppBarSingleton get instance => _instance ??= AppBarSingleton._();
-
-  static var widgetSingleton = AppBarWidget();
-
-  AppBarWidget widget() {
-    return widgetSingleton;
-  }
-}
-
 class AppBarWidget extends StatefulWidget {
+  final String page;
+
+  AppBarWidget({required this.page});
+
   @override
-  _AppBarWidgetState createState() => _AppBarWidgetState();
+  _AppBarWidgetState createState() => _AppBarWidgetState(page: page);
 }
 
 class _AppBarWidgetState extends State<AppBarWidget> {
   List isHovering = [false, false, false];
-  List isSelected = [false, false, false];
+  final String page;
 
+  _AppBarWidgetState({required this.page});
 
   @override
   Widget build(BuildContext context) {
@@ -45,9 +36,6 @@ class _AppBarWidgetState extends State<AppBarWidget> {
                     children: [
                       InkWell(
                         onTap: () {
-                          setState(() {
-                            isSelected[0] = true;
-                          });
                           Navigator.of(context).pushNamed(FeedPage.route);
                         },
                         onHover: (value) {
@@ -64,13 +52,13 @@ class _AppBarWidgetState extends State<AppBarWidget> {
                                     : Colors.white,
                               ),
                             ),
-                            SizedBox(height: isHovering[0] || isSelected[0] ? 5 : 0),
+                            SizedBox(height: isHovering[0] || page == "feed" ? 5 : 0),
                             // For showing an underline on hover
                             Visibility(
                               maintainAnimation: true,
                               maintainState: true,
                               maintainSize: true,
-                              visible: isHovering[0] || isSelected[0],
+                              visible: isHovering[0] || page == "feed",
                               child: Container(
                                 height: 2,
                                 width: 20,
@@ -83,9 +71,6 @@ class _AppBarWidgetState extends State<AppBarWidget> {
                       SizedBox(width: screenSize.width / 20),
                       InkWell(
                         onTap: () {
-                          setState(() {
-                            isSelected[1] = true;
-                          });
                           Navigator.of(context).pushNamed(AnnouncementsPage.route);
                         },
                         onHover: (value) {
@@ -102,13 +87,13 @@ class _AppBarWidgetState extends State<AppBarWidget> {
                                     : Colors.white,
                               ),
                             ),
-                            SizedBox(height: isHovering[1] || isSelected[1] ? 5 : 0),
+                            SizedBox(height: isHovering[1] || page == "announcements" ? 5 : 0),
                             // For showing an underline on hover
                             Visibility(
                               maintainAnimation: true,
                               maintainState: true,
                               maintainSize: true,
-                              visible: isHovering[1] || isSelected[1],
+                              visible: isHovering[1] || page == "announcements",
                               child: Container(
                                 height: 2,
                                 width: 20,
@@ -121,9 +106,6 @@ class _AppBarWidgetState extends State<AppBarWidget> {
                       SizedBox(width: screenSize.width / 20),
                       InkWell(
                         onTap: () {
-                          setState(() {
-                            isSelected[2] = true;
-                          });
                           Navigator.of(context).pushNamed(AssignmentsPage.route);
                         },
                         onHover: (value) {
@@ -140,13 +122,13 @@ class _AppBarWidgetState extends State<AppBarWidget> {
                                     : Colors.white,
                               ),
                             ),
-                            SizedBox(height: isHovering[2] || isSelected[2] ? 5 : 0),
+                            SizedBox(height: isHovering[2] || page == "assignments" ? 5 : 0),
                             // For showing an underline on hover
                             Visibility(
                               maintainAnimation: true,
                               maintainState: true,
                               maintainSize: true,
-                              visible: isHovering[2] || isSelected[2],
+                              visible: isHovering[2] || page == "assignments",
                               child: Container(
                                 height: 2,
                                 width: 20,

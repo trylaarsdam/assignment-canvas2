@@ -19,7 +19,7 @@ class _AnnouncementsPageState extends State<AnnouncementsPage> {
     return Scaffold(
       appBar: PreferredSize(
         preferredSize: Size(screenSize.width, 1000),
-        child: AppBarWidget()),
+        child: AppBarWidget(page: "announcements")),
       body: Text("announcements"),
     );
   }

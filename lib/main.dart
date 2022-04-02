@@ -22,7 +22,12 @@ class AssignmentCanvasApp extends StatelessWidget {
       },
       theme: ThemeData(
         visualDensity: VisualDensity.adaptivePlatformDensity,
+        brightness: Brightness.light
       ),
+      darkTheme: ThemeData(
+        brightness: Brightness.dark
+      ),
+      themeMode: ThemeMode.system,
       home: HomePage(),
     );
   }

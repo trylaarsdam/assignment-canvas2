@@ -26,7 +26,7 @@ class _FeedPageState extends State<FeedPage> {
     return Scaffold(
       appBar: PreferredSize(
         preferredSize: Size(screenSize.width, 1000),
-        child: AppBarWidget(),
+        child: AppBarWidget(page: "feed"),
       ),
       body: 
       Padding(
@@ -60,10 +60,10 @@ class _FeedPageState extends State<FeedPage> {
                       value: classSelection,
                       icon: Icon(Icons.arrow_drop_down),
                       elevation: 16,
-                      style: const TextStyle(color: Color.fromARGB(255, 0, 85, 155)),
+                      style: const TextStyle(color: Colors.blue),
                       underline: Container(
                         height: 2,
-                        color: Color.fromARGB(255, 0, 85, 155),
+                        color: Colors.blue,
                       ),
                       onChanged: (String? newValue) {
                         setState(() {
@@ -84,10 +84,10 @@ class _FeedPageState extends State<FeedPage> {
                     value: sortSelection,
                     icon: Icon(Icons.arrow_drop_down),
                     elevation: 16,
-                    style: const TextStyle(color: Color.fromARGB(255, 0, 85, 155)),
+                    style: const TextStyle(color: Colors.blue),
                     underline: Container(
                       height: 2,
-                      color: Color.fromARGB(255, 0, 85, 155),
+                      color: Colors.blue,
                     ),
                     onChanged: (String? newValue) {
                       setState(() {

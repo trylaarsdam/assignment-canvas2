@@ -19,7 +19,7 @@ class _AssignmentsPageState extends State<AssignmentsPage> {
     return Scaffold(
       appBar: PreferredSize(
         preferredSize: Size(screenSize.width, 1000),
-        child: AppBarWidget()),
+        child: AppBarWidget(page: "assignments")),
       body: Text("Assignments Page"),
     );
   }

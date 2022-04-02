@@ -15,7 +15,7 @@ class _HomePageState extends State<HomePage> {
     return Scaffold(
       appBar: PreferredSize(
         preferredSize: Size(screenSize.width, 1000),
-        child: AppBarWidget()),
+        child: AppBarWidget(page: "home")),
       body: Container(),
     );
   }
