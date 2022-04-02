@@ -1,8 +1,5 @@
 import 'package:flutter/material.dart';
 
-
-
-
 class AssignmentCardWidget extends StatefulWidget {
   final String title;
   final String className;
