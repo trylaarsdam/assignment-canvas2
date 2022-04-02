@@ -6,7 +6,7 @@ class Announcement {
   String authorName;
   String description;
   String status;
-  List<String> replyIDs;
+  List<Announcement> replyIDs;
 
   Announcement({
     required this.id,

@@ -2,6 +2,10 @@ import 'package:flutter/material.dart';
 import '../appBar.dart';
 import 'package:assignment_canvas2/cards/assignmentCard.dart';
 import 'package:assignment_canvas2/cards/announcementCard.dart';
+import 'package:assignment_canvas2/classes/announcement.dart';
+import 'package:assignment_canvas2/classes/assignment.dart';
+import 'package:assignment_canvas2/classes/user.dart';
+import 'package:assignment_canvas2/classes/course.dart';
 
 class FeedPage extends StatefulWidget {
   @override
@@ -118,11 +122,11 @@ class _FeedPageState extends State<FeedPage> {
                           children: [
                             Padding(
                               padding: EdgeInsets.only(bottom: 20.0),
-                              child: AssignmentCardWidget(title: "Assignment 1", className: "Class 1", dueDate: "4/8/22", description: "this assignment is worth 20 points and is due on friday", points: "20", status: "not complete", classID: "1", id: "1", authorName: "Teacher Name"),
+                              child: AssignmentCardWidget(assignment: Assignment(name: "Assignment 1", className: "Class 1", dueDate: "4/8/22", description: "this assignment is worth 20 points and is due on friday", points: "20", status: "not complete", classID: "1", id: "1", authorName: "Teacher Name")),
                             ),
                             Padding(
                               padding: EdgeInsets.only(bottom: 20.0),
-                              child: AssignmentCardWidget(title: "Assignment 2", className: "Class 1", dueDate: "4/5/22", description: "this is information about an assignment", points: "15", status: "complete", classID: "1", id: "2", authorName: "Teacher Name")
+                              child: AssignmentCardWidget(assignment: Assignment(name: "Assignment 2", className: "Class 1", dueDate: "4/10/22", description: "this assignment is worth 40 points and is due on sunday", points: "40", status: "not complete", classID: "1", id: "2", authorName: "Teacher Name")),
                             ),
                             Padding(
                               padding: EdgeInsets.only(bottom: 20.0),

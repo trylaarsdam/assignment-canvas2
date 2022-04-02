@@ -1,63 +1,24 @@
+import 'package:assignment_canvas2/classes/assignment.dart';
 import 'package:flutter/material.dart';
 
 class AssignmentCardWidget extends StatefulWidget {
-  final String title;
-  final String className;
-  final String dueDate;
-  final String description;
-  final String points;
-  final String status;
-  final String classID;
-  final String id;
-  final String authorName;
+  final Assignment assignment;
 
   AssignmentCardWidget({
-    required this.title,
-    required this.className,
-    required this.classID,
-    required this.authorName,
-    required this.id,
-    required this.dueDate,
-    required this.description,
-    required this.points,
-    required this.status,
+    required this.assignment,
   });
 
   @override
   _AssignmentCardWidgetState createState() => _AssignmentCardWidgetState(
-    title: title,
-    className: className,
-    dueDate: dueDate,
-    description: description,
-    points: points,
-    status: status,
-    classID: classID,
-    id: id,
-    authorName: authorName,
+    assignment: assignment,
   );
 }
 
 class _AssignmentCardWidgetState extends State<AssignmentCardWidget> {
-  final String title;
-  final String className;
-  final String dueDate;
-  final String description;
-  final String points;
-  final String status;
-  final String classID;
-  final String id;
-  final String authorName;
+  final Assignment assignment;
 
   _AssignmentCardWidgetState({
-    required this.title,
-    required this.className,
-    required this.dueDate,
-    required this.description,
-    required this.points,
-    required this.status,
-    required this.classID,
-    required this.authorName,
-    required this.id,
+    required this.assignment,
   });
 
   List isHovering = [false, false, false];
@@ -87,12 +48,12 @@ class _AssignmentCardWidgetState extends State<AssignmentCardWidget> {
                   mainAxisAlignment: MainAxisAlignment.start,
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
-                    Text(title, style: const TextStyle(fontSize: 20, fontWeight: FontWeight.bold)),
-                    Text(authorName + " - " + className, style: const TextStyle(fontSize: 16.0)),
+                    Text(assignment.name, style: const TextStyle(fontSize: 20, fontWeight: FontWeight.bold)),
+                    Text(assignment.authorName + " - " + assignment.className, style: const TextStyle(fontSize: 16.0)),
                   ]
                 ),
                 const Spacer(),
-                Text("Points: " + points + " | Due: " + dueDate + " ", style: const TextStyle(fontSize: 16.0, fontStyle: FontStyle.italic)),
+                Text("Points: " + assignment.points + " | Due: " + assignment.dueDate + " ", style: const TextStyle(fontSize: 16.0, fontStyle: FontStyle.italic)),
                 ButtonBar(
                   children: [
                     OutlinedButton(
@@ -122,7 +83,7 @@ class _AssignmentCardWidgetState extends State<AssignmentCardWidget> {
               ]
             ),
             const Divider(),
-            Text(description)
+            Text(assignment.description)
           ]
         ) 
       )
