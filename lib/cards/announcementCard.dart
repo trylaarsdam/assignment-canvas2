@@ -1,53 +1,24 @@
+import 'package:assignment_canvas2/classes/announcement.dart';
 import 'package:flutter/material.dart';
 
 class AnnouncementCardWidget extends StatefulWidget {
-  final String title;
-  final String className;
-  final String description;
-  final String status;
-  final String classID;
-  final String id;
-  final String authorName;
+  final Announcement announcement;
 
   AnnouncementCardWidget({
-    required this.title,
-    required this.className,
-    required this.classID,
-    required this.authorName,
-    required this.id,
-    required this.description,
-    required this.status,
+    required this.announcement
   });
 
   @override
   _AnnouncementCardWidgetState createState() => _AnnouncementCardWidgetState(
-    title: title,
-    className: className,
-    description: description,
-    status: status,
-    classID: classID,
-    id: id,
-    authorName: authorName,
+    announcement: announcement,
   );
 }
 
 class _AnnouncementCardWidgetState extends State<AnnouncementCardWidget> {
-  final String title;
-  final String className;
-  final String description;
-  final String status;
-  final String classID;
-  final String id;
-  final String authorName;
+  final Announcement announcement;
 
   _AnnouncementCardWidgetState({
-    required this.title,
-    required this.className,
-    required this.description,
-    required this.status,
-    required this.classID,
-    required this.authorName,
-    required this.id,
+    required this.announcement,
   });
 
   List isHovering = [false, false, false];
@@ -77,11 +48,13 @@ class _AnnouncementCardWidgetState extends State<AnnouncementCardWidget> {
                   mainAxisAlignment: MainAxisAlignment.start,
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
-                    Text(title, style: const TextStyle(fontSize: 20, fontWeight: FontWeight.bold)),
-                    Text(authorName + " - " + className, style: const TextStyle(fontSize: 16.0)),
+                    Text(announcement.name, style: const TextStyle(fontSize: 20, fontWeight: FontWeight.bold)),
+                    Text(announcement.authorName + " - " + announcement.className, style: const TextStyle(fontSize: 16.0)),
                   ]
                 ),
                 const Spacer(),
+                if (announcement.replyIDs.isNotEmpty)
+                  Text("Replies: " + announcement.replyIDs.length.toString() + " ", style: const TextStyle(fontSize: 16.0, fontStyle: FontStyle.italic)),
                 ButtonBar(
                   children: [
                     OutlinedButton(
@@ -111,7 +84,7 @@ class _AnnouncementCardWidgetState extends State<AnnouncementCardWidget> {
               ]
             ),
             const Divider(),
-            Text(description)
+            Text(announcement.description)
           ]
         ) 
       )

@@ -130,7 +130,9 @@ class _FeedPageState extends State<FeedPage> {
                             ),
                             Padding(
                               padding: EdgeInsets.only(bottom: 20.0),
-                              child: AnnouncementCardWidget(title: "Announcement 1", className: "Class 2", description: "this is the content of an announcement \nthis is another line", status: "complete", classID: "1", id: "2", authorName: "Teacher Name")
+                              child: AnnouncementCardWidget(announcement: Announcement(name: "Announcement 1", className: "Class 2", description: "this is the content of an announcement \nthis is another line", status: "complete", classID: "1", id: "2", authorName: "Teacher Name", replyIDs: [
+                                Announcement(name: "Announcement Reply", className: "Class 2", description: "this is the content of a reply \nthis is another line", status: "complete", classID: "1", id: "2", authorName: "Teacher Name", replyIDs: [])
+                              ]))
                             )
                           ],
                         )
